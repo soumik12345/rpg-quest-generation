@@ -1,1 +1,1 @@
-from .main_quest import MainQuestScraper
+from .main_quest import MainQuestScraper, get_main_quest_list
