@@ -15,8 +15,8 @@ class SectionScraper:
         list_md = ""
         for _item in list(content.children):
             if _item != "\n":
-                list_md += f"- {_item.text}\n"
-        return list_md
+                list_md += f"\n* {_item.text}"
+        return list_md + "\n"
 
     def scrape_section(
         self, section_id: str, includes: List[str], break_tag: str
