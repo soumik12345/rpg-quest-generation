@@ -38,7 +38,8 @@ class MainQuestScraper(ABC):
 
 
 def get_main_quest_list(page_url: str) -> Tuple[List, List, List]:
-    base_url = os.path.dirname(page_url)
+    base_url = os.path.dirname(os.path.dirname(page_url))
+    print(base_url)
     soup = BeautifulSoup(requests.get(page_url).content, "html.parser")
     table_tags = soup.find_all("table", class_="wikitable sortable")
     quest_names, quest_levels, quest_locations, quest_urls = [], [], [], []
